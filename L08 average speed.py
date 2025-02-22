@@ -19,4 +19,5 @@ elif avg > b:
     print(avg," is greater the ",b)
 elif avg > c:
     print(avg," is greater the ",c)
-
+else:
+    print("invalid input")
