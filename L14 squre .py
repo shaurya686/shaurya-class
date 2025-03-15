@@ -5,6 +5,22 @@ paper.bgcolor("blue") #set the 'paper'bg color
 paper.setup(300,400) #widht = 300 height = 400 
 paper.title("squre")
 
+paper = turtle.Screen()#make the paper or the screen
+paper.bgcolor("blue") #set the 'paper'bg color
+paper.setup(300,400) #widht = 300 height = 400 
+paper.title("rectangle")
+
+paper = turtle.Screen()#make the paper or the screen
+paper.bgcolor("blue") #set the 'paper'bg color
+paper.setup(300,400) #widht = 300 height = 400 
+paper.title("triangle")
+
+paper = turtle.Screen()#make the paper or the screen
+paper.bgcolor("blue") #set the 'paper'bg color
+paper.setup(300,400) #widht = 300 height = 400 
+paper.title("cricle")
+
+
 pen = turtle.Turtle()#make pen
 pen.color("red")
 
