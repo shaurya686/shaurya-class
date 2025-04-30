@@ -31,7 +31,7 @@ def printBoard(board):
     
 def game():
 
-    turn = 'x'
+    turn = 'X'
     count = 0
 
 
@@ -53,42 +53,61 @@ def game():
             if TheBoard['7'] == TheBoard['8'] == TheBoard['9'] != ' ': #across the top
                 printBoard(TheBoard)
                 print("\n Gameover .\n")
-                print(" **** " + turn + "won. ****")
+                print(" **** " + turn + " won. ****")
                 break
-            elif TheBoard['4'] == TheBoard['5'] == TheBoard['6'] != ' ': #across the top
+            elif TheBoard['4'] == TheBoard['5'] == TheBoard['6'] != ' ': #across the middle
                 printBoard(TheBoard)
                 print("\n Gameover .\n")
-                print(" **** " + turn + "won. ****")
+                print(" **** " + turn + " won. ****")
                 break
-            elif TheBoard['1'] == TheBoard['2'] == TheBoard['3'] != ' ': #across the top
+            elif TheBoard['1'] == TheBoard['2'] == TheBoard['3'] != ' ': #across the 
                 printBoard(TheBoard)
                 print("\n Gameover .\n")
-                print(" **** " + turn + "won. ****")
+                print(" **** " + turn + " won. ****")
                 break
             elif TheBoard['1'] == TheBoard['4'] == TheBoard['7'] != ' ': #across the top
                 printBoard(TheBoard)
                 print("\n Gameover .\n")
-                print(" **** " + turn + "won. ****")
+                print(" **** " + turn + " won. ****")
                 break
             elif TheBoard['2'] == TheBoard['5'] == TheBoard['8'] != ' ': #across the top
                 printBoard(TheBoard)
                 print("\n Gameover .\n")
-                print(" **** " + turn + "won. ****")
+                print(" **** " + turn + " won. ****")
                 break
             elif TheBoard['3'] == TheBoard['6'] == TheBoard['9'] != ' ': #across the top
                 printBoard(TheBoard)
                 print("\n Gameover .\n")
-                print(" **** " + turn + "won. ****")
+                print(" **** " + turn + " won. ****")
                 break
             elif TheBoard['7'] == TheBoard['5'] == TheBoard['3'] != ' ': #across the top
                 printBoard(TheBoard)
                 print("\n Gameover .\n")
-                print(" **** " + turn + "won. ****")
+                print(" **** " + turn + " won. ****")
                 break
             elif TheBoard['1'] == TheBoard['5'] == TheBoard['9'] != ' ': #across the top
                 printBoard(TheBoard)
                 print("\n Gameover .\n")
-                print(" **** " + turn + "won. ****")
+                print(" **** " + turn + " won. ****")
                 break
           
-        #if neither X nor o win and the board is full 
+        #if neither X nor o win and the board is full we'll declare the result as tie
+        if count == 9:
+            print("\nGame over")
+            print("it a tie")
+
+        #now we have to change the player after every move.
+        if turn == 'X':
+            turn = 'O'
+        else:
+            turn = 'X'
+
+    restart = input("do you want to play again?(y/n)")
+    if restart == "y" or restart =="Y":
+        for key in board_keys:
+            TheBoard[key] = " "
+
+        game()
+
+if __name__=="__main__":
+    game()
