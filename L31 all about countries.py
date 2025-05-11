@@ -1,23 +1,31 @@
-from abc import ABC, abstractmethod
+class arkansas():
+    def capital(self):
+        print("little rock is the capital of arkansas")
 
-#create parent class
-class absclass(ABC):
-    #function to print a value 
-    def display (self,x):
-        print("passed value: ", x)
+    def language(self):
+        print("english is the national language of arkansas.")
 
-    #abstract method
-    @abstractmethod
-    def task(self):
-        print("we are inside absclass task")
+    def type(self):
+        print("arkansnas is a Southern state")
 
-#create sud class / child class 
-class test_class(absclass):
-    def task(self):
-        print("we are inside test_class task")
+#class 2
+class USA():
+    def capital(self):
+        print("washington is the capital of USA")
 
-#object of test_class create
-test_obj = test_class()
+    def language(self):
+        print("english is the national language of USA.")
 
-test_obj.task()
-test_obj.display(100)
+    def type(self):
+        print("USA is a developed country.")
+
+#object creation
+obj_ark = arkansas()
+obj_usa = USA()
+
+#common interfrace
+for conutry in (obj_ark, obj_usa):
+    conutry.capital()
+    conutry.language()
+    conutry.type()
+    print()
