@@ -1,56 +1,38 @@
-class Vehicle:
-    all_burnt = []
+class Car:
+    def fuel_type(self):
+        raise NotImplementedError("Subclass must implement fuel_type method.")
 
-    def __init__(self, name):
-        self.name = name
-        self.is_burnt = False
-
-    def burn(self):
-        if not self.is_burnt:
-            self.is_burnt = True
-            Vehicle.all_burnt.append(self)
-            print(self.burn_message())
-        else:
-            print(f"{self.name} is already burnt.")
-
-    def burn_message(self):
-        return f"{self.name} is burning!"
+    def max_speed(self):
+        raise NotImplementedError("Subclass must implement max_speed method.")
 
 
-class Car(Vehicle):
-    def burn_message(self):
-        return f"{self.name} (Car) explodes into flames!"
+class BMW(Car):
+    def fuel_type(self):
+        return "Petrol"
 
-class Plane(Vehicle):
-    def burn_message(self):
-        return f"{self.name} (Plane) crashes and burns!"
-
-class Train(Vehicle):
-    def burn_message(self):
-        return f"{self.name} (Train) melts on the tracks!"
-
-class Bus(Vehicle):
-    def burn_message(self):
-        return f"{self.name} (Bus) goes up in smoke!"
+    def max_speed(self):
+        return "250 km/h"
 
 
-def burn_all(vehicles):
-    for v in vehicles:
-        v.burn()
+class Lamborghini(Car):
+    def fuel_type(self):
+        return "Premium Petrol"
 
-def show_burnt_vehicles():
-    print("\nBurnt Vehicles:")
-    for v in Vehicle.all_burnt:
-        print(f"- {v.name}")
+    def max_speed(self):
+        return "350 km/h"
 
 
-# Example
-vehicles = [
-    Car("Lamborghini"),
-    Plane("Jet A1"),
-    Train("Express Line"),
-    Bus("City Bus")
-]
+# Polymorphism in action
+def show_car_info(car):
+    print(f"Fuel Type: {car.fuel_type()}")
+    print(f"Max Speed: {car.max_speed()}")
+    print("-" * 20)
 
-burn_all(vehicles)
-show_burnt_vehicles()
+
+# Create objects
+bmw = BMW()
+lambo = Lamborghini()
+
+# Show info using same method names
+show_car_info(bmw)
+show_car_info(lambo)
