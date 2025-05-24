@@ -3,9 +3,27 @@ class flashcard:
         self.word = word
         self.meaning = meaning
 
-        def __str__(self):
-            #we will return a string
-            return self.word+' ( '+self.meaning+' )'
+    def __str__(self):
+        #we will return a string
+        return self.word+' ( '+self.meaning+' )'
         
 flash = []
-print("welcome to flashcard application")        
+print("welcome to flashcard application")
+
+#the  following loop will  be repeated until
+#user stops to add the flashcards 
+while(True):
+    word = input("enter a word : ")
+    meaning = input("enter the meaning of the word : ")
+
+    flash.append(flashcard(word, meaning))
+    option = int(input("enter 0 , if want to add another flashcard otherwise enter 1 : ")) 
+
+    if(option):
+        break
+
+print()
+# printing all flashcards
+print("your flashcards")
+for i in flash:
+    print(">", i)
