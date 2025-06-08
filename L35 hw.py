@@ -118,7 +118,6 @@ while not exit:
     # If the sprite color change event is triggered, change the sprite's color
     elif event.type == SPRITE_COLOR_CHANGE_EVENT:
       sp1.change_color()
-    elif event.type == SPRITE_COLOR_CHANGE_EVENT:
       sp2.change_color()
       
     # If the background color change event is triggered, change the background color
